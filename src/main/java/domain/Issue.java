@@ -1,18 +1,29 @@
 package domain;
 
-import java.awt.*;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.Set;
 
 public class Issue {
     private int id;
     private String name;
-    private HashSet<User> author = new HashSet<>() ;
-    private HashSet<Label> label = new HashSet<>();
-    private HashSet<Project> project = new HashSet<>();
+    private User author = new User();
+    private Set<Label> label = new HashSet<>();
+    private Set<Project> project = new HashSet<>();
     private String milestones;
-    private HashSet<User> assignee = new HashSet<>() ;
+    private User assignee = new User() ;
     private boolean isOpen;
+
+    public Issue(int id, String name, User author, Set<Label> label, Set<Project> project, String milestones, User assignee, boolean isOpen) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.label = label;
+        this.project = project;
+        this.milestones = milestones;
+        this.assignee = assignee;
+        this.isOpen = isOpen;
+    }
 
     public int getId() {
         return id;
@@ -30,27 +41,27 @@ public class Issue {
         this.name = name;
     }
 
-    public HashSet<User> getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(HashSet<User> author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
-    public HashSet<Label> getLabel() {
+    public Set<Label> getLabel() {
         return label;
     }
 
-    public void setLabel(HashSet<Label> label) {
+    public void setLabel(Set<Label> label) {
         this.label = label;
     }
 
-    public HashSet<Project> getProject() {
+    public Set<Project> getProject() {
         return project;
     }
 
-    public void setProject(HashSet<Project> project) {
+    public void setProject(Set<Project> project) {
         this.project = project;
     }
 
@@ -62,11 +73,11 @@ public class Issue {
         this.milestones = milestones;
     }
 
-    public HashSet<User> getAssignee() {
+    public User getAssignee() {
         return assignee;
     }
 
-    public void setAssignee(HashSet<User> assignee) {
+    public void setAssignee(User assignee) {
         this.assignee = assignee;
     }
 
